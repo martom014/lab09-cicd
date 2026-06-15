@@ -1,0 +1,53 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  DOTNET_VERSION: '10.0.x'
+  PROJECT_PATH: 'Lab09_PackagedApp'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Restore
+      run: dotnet restore ${{ env.PROJECT_PATH }}
+
+    - name: Build
+      run: dotnet build ${{ env.PROJECT_PATH }} --configuration Release --no-restore
+
+    - name: Test with coverage
+      run: |
+        if (Test-Path "${{ env.PROJECT_PATH }}.Tests") {
+          dotnet test ${{ env.PROJECT_PATH }}.Tests --configuration Release --no-restore --collect:"XPlat Code Coverage" --results-directory ./coverage
+        } else {
+          Write-Host "Brak projektu testowego, pomijam krok."
+        }
+
+    - name: Publish
+      run: dotnet publish ${{ env.PROJECT_PATH }} --configuration Release --runtime win-x64 --output ./publish
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-build
+        path: ./publish/
+
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report
+        path: ./coverage/**/coverage.cobertura.xml
