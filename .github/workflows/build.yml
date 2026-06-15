@@ -7,9 +7,10 @@ on:
     branches: [ main ]
 
 env:
-  DOTNET_VERSION: '10.0.x'
-  PROJECT_PATH: '.'  
-  TESTS_PATH: 'Lab09_PackagedApp.Tests' 
+  DOTNET_VERSION: '8.0.x'
+  PROJECT_PATH: '.'
+  TESTS_PATH: 'Lab09_PackagedApp.Tests'
+
 jobs:
   build:
     runs-on: windows-latest
@@ -24,21 +25,21 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
     - name: Restore
-      run: dotnet restore ${{ env.PROJECT_PATH }}
+      run: dotnet restore
 
     - name: Build
-      run: dotnet build ${{ env.PROJECT_PATH }} --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore
 
     - name: Test with coverage
       run: |
-        if (Test-Path "${{ env.PROJECT_PATH }}.Tests") {
-          dotnet test ${{ env.PROJECT_PATH }}.Tests --configuration Release --no-restore --collect:"XPlat Code Coverage" --results-directory ./coverage
+        if (Test-Path "${{ env.TESTS_PATH }}") {
+          dotnet test ${{ env.TESTS_PATH }} --configuration Release --no-restore --collect:"XPlat Code Coverage" --results-directory ./coverage
         } else {
           Write-Host "Brak projektu testowego, pomijam krok."
         }
 
     - name: Publish
-      run: dotnet publish --configuration Release --runtime win-x64 --output ./publish /p:PublishReadyToRun=false
+      run: dotnet publish --configuration Release --runtime win-x64 --output ./publish -p:Platform=x64 -p:PublishReadyToRun=false -p:PublishTrimmed=false
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v4
