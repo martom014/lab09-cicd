@@ -17,7 +17,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath></WindowsSdkPath>
     <LayoutDir>C:\Users\Administrator\source\repos\Lab09_PackagedApp\Lab09_PackagedApp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
-    <RegisteredManifestChecksum>59D26E853F121EBD5B40B00AFD6FDC1E8AC3C1EEEBD4CA80F306CE9780528A06</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>7846F07E998E93AF25E2C7B262E270FD9CF4043708D5699BC62DEDB370CD38E0</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>97b45401-c254-4745-be0f-3ba6e54b7843_1.0.0.0_x64__75cr2b68sm664</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>97b45401-c254-4745-be0f-3ba6e54b7843_75cr2b68sm664!App</RegisteredUserModeAppID>
     <RegisteredPackageID>97b45401-c254-4745-be0f-3ba6e54b7843</RegisteredPackageID>
@@ -28,7 +28,7 @@
     <AppXManifest Include="C:\Users\Administrator\source\repos\Lab09_PackagedApp\Lab09_PackagedApp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2026-06-15T09:20:02.605</Modified>
+      <Modified>2026-06-15T10:16:28.528</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -38,11 +38,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Administrator\source\repos\Lab09_PackagedApp\Lab09_PackagedApp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>Lab09_PackagedApp.exe</PackagePath>
-      <Modified>2026-06-15T09:20:01.318</Modified>
+      <Modified>2026-06-15T10:16:27.941</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Administrator\source\repos\Lab09_PackagedApp\Lab09_PackagedApp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Lab09_PackagedApp.dll">
       <PackagePath>Lab09_PackagedApp.dll</PackagePath>
-      <Modified>2026-06-15T09:20:01.295</Modified>
+      <Modified>2026-06-15T10:16:27.926</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Administrator\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.27\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
