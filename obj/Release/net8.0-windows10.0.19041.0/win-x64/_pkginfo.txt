@@ -1,0 +1,1 @@
+C:\Users\Administrator\source\repos\Lab09_PackagedApp\Lab09_PackagedApp\AppPackages\Lab09_PackagedApp_1.0.0.0_x64_Test\Lab09_PackagedApp_1.0.0.0_x64.msix

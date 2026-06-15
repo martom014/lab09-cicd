@@ -1,0 +1,1 @@
+C:\Users\Administrator\source\repos\Lab09_PackagedApp\Lab09_PackagedApp\Lab09_PackagedApp.csproj;x64
