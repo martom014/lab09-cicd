@@ -8,8 +8,8 @@ on:
 
 env:
   DOTNET_VERSION: '10.0.x'
-  PROJECT_PATH: 'Lab09_PackagedApp'
-
+  PROJECT_PATH: '.'  
+  TESTS_PATH: 'Lab09_PackagedApp.Tests' 
 jobs:
   build:
     runs-on: windows-latest
