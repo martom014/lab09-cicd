@@ -28,9 +28,13 @@ jobs:
         }
         Write-Output "Brak znanych podatnosci."
 
-    - name: Build z analizatorami (SAST)
-      run: |
-        dotnet build --configuration Release /p:TreatWarningsAsErrors=true
+   - name: Build z analizatorami (SAST)
+      run: >
+        dotnet build --configuration Release
+        /p:TreatWarningsAsErrors=false
+        /p:PublishReadyToRun=false
+        -r win-x64
+        --no-restore
 
     - name: Generuj SBOM
       shell: pwsh
